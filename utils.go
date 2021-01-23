@@ -9,7 +9,11 @@ import (
 	"github.com/kyokomi/emoji"
 )
 
-func clearScreen() {
+// maxPageSize represents the default maximum number of dropdown options to display in gooey
+const maxPageSize = 20
+
+// ClearScreen clears the terminal UI
+func ClearScreen() {
 	print("\033[H\033[2J")
 }
 
