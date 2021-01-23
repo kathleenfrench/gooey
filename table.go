@@ -7,7 +7,7 @@ import (
 	"github.com/jedib0t/go-pretty/text"
 )
 
-// RenderTable outputs data into a table
+// RenderTable outputs data into a simple terminal table
 func RenderTable(header table.Row, rows []table.Row) {
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
@@ -17,7 +17,7 @@ func RenderTable(header table.Row, rows []table.Row) {
 	t.Render()
 }
 
-// SideBySideTable is used for displaying information
+// SideBySideTable outputs data in a side-by-side table with a block header
 func SideBySideTable(rows []table.Row) {
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
