@@ -7,6 +7,8 @@
 ```
 package main
 
+import "github.com/kathleenfrench/gooey"
+
 const defaultExitHelpText = ":q or :quit will quit the program"
 
 func main() {
