@@ -9,17 +9,22 @@ import (
 	"github.com/kyokomi/emoji"
 )
 
-func clearScreen() {
+// maxPageSize represents the default maximum number of dropdown options to display in gooey
+const maxPageSize = 20
+
+// ClearScreen clears the terminal UI
+func ClearScreen() {
 	print("\033[H\033[2J")
 }
 
-func wantsToExit(v string) bool {
-	switch v {
-	case ":q", ":quit":
-		return true
-	default:
-		return false
+func wantsToExit(userInput string, exitKeys []string) bool {
+	for _, k := range exitKeys {
+		if userInput == k {
+			return true
+		}
 	}
+
+	return false
 }
 
 // Spin is a spinner used to indicate a pending process
