@@ -17,13 +17,14 @@ func ClearScreen() {
 	print("\033[H\033[2J")
 }
 
-func wantsToExit(v string) bool {
-	switch v {
-	case ":q", ":quit":
-		return true
-	default:
-		return false
+func wantsToExit(userInput string, exitKeys []string) bool {
+	for _, k := range exitKeys {
+		if userInput == k {
+			return true
+		}
 	}
+
+	return false
 }
 
 // Spin is a spinner used to indicate a pending process
