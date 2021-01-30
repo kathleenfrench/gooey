@@ -18,7 +18,7 @@ func RenderTable(header table.Row, rows []table.Row) {
 }
 
 // SideBySideTable outputs data in a side-by-side table with a block header
-func SideBySideTable(rows []table.Row) {
+func SideBySideTable(rows []table.Row, maxWidth int) {
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
 	t.AppendHeader(table.Row{"#", ""})
@@ -30,7 +30,7 @@ func SideBySideTable(rows []table.Row) {
 			Name:     "#",
 			Align:    text.AlignLeft,
 			Colors:   text.Colors{text.FgHiRed},
-			WidthMax: 60,
+			WidthMax: maxWidth,
 		},
 	})
 
